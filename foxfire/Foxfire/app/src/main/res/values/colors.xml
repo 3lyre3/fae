@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="foxfire_bg">#FF0A0F0C</color>
+    <color name="foxfire_surface">#F00E1712</color>
+    <color name="foxfire_glow">#FF74E39B</color>
+    <color name="foxfire_glow_soft">#5F74E39B</color>
+    <color name="foxfire_text">#FFE8F5ED</color>
+    <color name="foxfire_dim">#FF7FA793</color>
+</resources>

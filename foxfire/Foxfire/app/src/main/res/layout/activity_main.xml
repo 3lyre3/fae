@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/foxfire_bg"
+    android:fitsSystemWindows="true">
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- Empty / welcome state (shown when opened from the launcher) -->
+    <LinearLayout
+        android:id="@+id/emptyState"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <ImageView
+            android:id="@+id/firefly"
+            android:layout_width="136dp"
+            android:layout_height="136dp"
+            android:src="@drawable/firefly"
+            android:contentDescription="@string/firefly_desc" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/empty_title"
+            android:textColor="@color/foxfire_glow"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:fontFamily="serif" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:maxWidth="320dp"
+            android:text="@string/empty_body"
+            android:textColor="@color/foxfire_text"
+            android:textSize="15sp"
+            android:lineSpacingExtra="4sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/empty_whisper"
+            android:textColor="@color/foxfire_dim"
+            android:textSize="13sp"
+            android:textStyle="italic"
+            android:fontFamily="serif" />
+    </LinearLayout>
+
+    <!-- Find-in-page bar -->
+    <LinearLayout
+        android:id="@+id/findBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_margin="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/find_bar_bg"
+        android:padding="6dp"
+        android:elevation="8dp"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/findField"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:hint="@string/find_hint"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingHorizontal="12dp"
+            android:singleLine="true"
+            android:textColor="@color/foxfire_text"
+            android:textColorHint="@color/foxfire_dim" />
+
+        <TextView
+            android:id="@+id/findCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="8dp"
+            android:text="0 / 0"
+            android:textColor="@color/foxfire_dim"
+            android:textSize="13sp" />
+
+        <ImageButton
+            android:id="@+id/findPrev"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:contentDescription="@string/find_prev"
+            android:src="@drawable/ic_up"
+            android:tint="@color/foxfire_glow" />
+
+        <ImageButton
+            android:id="@+id/findNext"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:contentDescription="@string/find_next"
+            android:src="@drawable/ic_down"
+            android:tint="@color/foxfire_glow" />
+
+        <ImageButton
+            android:id="@+id/findClose"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:contentDescription="@string/find_close"
+            android:src="@drawable/ic_close"
+            android:tint="@color/foxfire_dim" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/searchFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/find_open"
+        android:src="@drawable/ic_search"
+        android:visibility="gone"
+        app:backgroundTint="@color/foxfire_glow"
+        app:tint="@color/foxfire_bg" />
+</FrameLayout>

@@ -1,0 +1,45 @@
+name: Build Foxfire APK
+
+# Builds the debug APK in the cloud so you never need a PC.
+# Runs on every push, and can also be triggered by hand from the Actions tab.
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the project
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install SDK packages
+        run: sdkmanager "platforms;android-34" "build-tools;34.0.0"
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.7'
+
+      - name: Generate the Gradle wrapper
+        run: gradle wrapper --gradle-version 8.7
+
+      - name: Build the debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      # The finished APK is uploaded as a downloadable artifact.
+      # Open the completed run on your phone → scroll to "Artifacts" → tap to download.
+      - name: Upload the APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: foxfire-debug-apk
+          path: app/build/outputs/apk/debug/app-debug.apk

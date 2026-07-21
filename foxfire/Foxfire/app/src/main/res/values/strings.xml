@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Foxfire</string>
+
+    <string name="find_hint">find in page…</string>
+    <string name="find_open">Find in page</string>
+    <string name="find_next">Next match</string>
+    <string name="find_prev">Previous match</string>
+    <string name="find_close">Close find</string>
+
+    <string name="firefly_desc">A drifting foxfire mote</string>
+    <string name="empty_title">Nothing lit yet</string>
+    <string name="empty_body">Long-press an .html file, tap “Open with”, and choose Foxfire. It’ll render right here.</string>
+    <string name="empty_whisper">the little green light waits in the dark</string>
+</resources>

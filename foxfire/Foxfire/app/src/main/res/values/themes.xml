@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Foxfire" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/foxfire_glow</item>
+        <item name="colorPrimaryVariant">@color/foxfire_glow</item>
+        <item name="colorSecondary">@color/foxfire_glow</item>
+        <item name="android:windowBackground">@color/foxfire_bg</item>
+        <item name="android:statusBarColor">@color/foxfire_bg</item>
+        <item name="android:navigationBarColor">@color/foxfire_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

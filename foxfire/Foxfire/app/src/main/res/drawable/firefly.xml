@@ -1,0 +1,44 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- soft glow halo -->
+    <path android:pathData="M8,60a52,52 0 1,0 104,0a52,52 0 1,0 -104,0z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="60"
+                android:centerY="60"
+                android:gradientRadius="56"
+                android:startColor="#6674E39B"
+                android:endColor="#0074E39B" />
+        </aapt:attr>
+    </path>
+
+    <!-- main sparkle -->
+    <path android:pathData="M60,22 L69,51 L98,60 L69,69 L60,98 L51,69 L22,60 L51,51 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="60"
+                android:centerY="60"
+                android:gradientRadius="40"
+                android:startColor="#FFF0FFF6"
+                android:endColor="#FF6FDF98" />
+        </aapt:attr>
+    </path>
+
+    <!-- companion motes -->
+    <path
+        android:fillColor="#FFB6FFD2"
+        android:pathData="M86,33 L88,38 L93,40 L88,42 L86,47 L84,42 L79,40 L84,38 Z" />
+    <path
+        android:fillColor="#FF9CF2C0"
+        android:pathData="M34,76 L35.5,80.5 L40,82 L35.5,83.5 L34,88 L32.5,83.5 L28,82 L32.5,80.5 Z" />
+    <path
+        android:fillColor="#FFC8FFDD"
+        android:pathData="M84,81 L85.2,84.8 L89,86 L85.2,87.2 L84,91 L82.8,87.2 L79,86 L82.8,84.8 Z" />
+</vector>
