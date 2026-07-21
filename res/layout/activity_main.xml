@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0d1a12">
+
+    <!-- Fae Top Bar Controls -->
+    <LinearLayout
+        android:id="@+id/searchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:background="#162e20">
+
+        <EditText
+            android:id="@+id/searchInput"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:hint="Seek among the leaves..."
+            android:textColorHint="#5c8a6f"
+            android:textColor="#d1fae5"
+            android:background="#0d1a12"
+            android:paddingHorizontal="14dp"
+            android:textSize="14sp"
+            android:imeOptions="actionSearch"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/matchCountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 wisps"
+            android:textColor="#34d399"
+            android:textSize="12sp"
+            android:paddingHorizontal="8dp" />
+
+        <ImageButton
+            android:id="@+id/btnPrev"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@android:drawable/arrow_up_float"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Previous"
+            android:tint="#34d399" />
+
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@android:drawable/arrow_down_float"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Next"
+            android:tint="#34d399" />
+
+        <ImageButton
+            android:id="@+id/btnCloseSearch"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Close search"
+            android:tint="#6ee7b7" />
+    </LinearLayout>
+
+    <!-- HTML Render Canvas -->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
+
