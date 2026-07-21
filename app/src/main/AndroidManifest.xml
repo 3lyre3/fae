@@ -15,7 +15,13 @@
             android:launchMode="singleTop"
             android:configChanges="orientation|screenSize">
 
-            <!-- Primary Intent Filter for local HTML files -->
+            <!-- 1. Launcher Filter (Adds app icon to app drawer, Pixel search, & App Info) -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- 2. Content & File Scheme Viewer Filter -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -24,11 +30,20 @@
                 <data android:scheme="content" />
                 <data android:scheme="file" />
                 <data android:mimeType="text/html" />
-                <data android:mimeType="text/plain" />
                 <data android:mimeType="application/xhtml+xml" />
             </intent-filter>
 
-            <!-- Extension matching fallback -->
+            <!-- 3. Direct MIME Type Filter (for Files by Google) -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:mimeType="text/html" />
+                <data android:mimeType="application/xhtml+xml" />
+            </intent-filter>
+
+            <!-- 4. File Extension Matcher Fallback -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
